@@ -39,8 +39,7 @@ namespace LAB7_AI_APP
                         generatedCharacters.Add(newPlayer); // Adds the character to the generatedCharacters list
                         Console.WriteLine("Your character has now been added... rebooting system...");
                         Thread.Sleep(5000); // Wait 5 seconds
-                        Console.Clear();
-                        break; ;
+                        break;
 
                     // Check the list of characters
                     case 1:
@@ -59,7 +58,6 @@ namespace LAB7_AI_APP
                         generatedCharacters[menuIndex].DisplayInfo();
                         Console.WriteLine("Your character has now been displayed... rebooting system...");
                         Thread.Sleep(5000); // Wait 5 seconds
-                        Console.Clear();
                         break;
 
                     // Exit
