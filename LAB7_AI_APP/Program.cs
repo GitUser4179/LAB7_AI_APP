@@ -6,7 +6,7 @@ namespace LAB7_AI_APP
     {
         static void Main(string[] args)
         {
-            // Runs the Menu
+            // Runs the Menu, sorry for using Thread.Sleep() I wanted to try it :(
             MenuHelper.StartMenu(); 
         }
 

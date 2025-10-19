@@ -46,6 +46,12 @@ namespace LAB7_AI_APP
                         Console.Clear();
                         Console.WriteLine("=== Character List ===");
 
+                        if (generatedCharacters.Count == 0)
+                        {
+                            Console.WriteLine("No characters have been generated yet... restarting program...");
+                            Thread.Sleep(5000);
+                            break;
+                        }
                         // I'll try to turn this into a generic method some day, probably too much of a hassle for now
                         for (int i = 0; i < generatedCharacters.Count; i++)
                         {
@@ -55,7 +61,7 @@ namespace LAB7_AI_APP
 
                         // Asks the user for input and sends it, also sends the amount of menu options
                         menuIndex = CheckInput(Console.ReadLine(), generatedCharacters.Count);
-                        generatedCharacters[menuIndex].DisplayInfo();
+                        Console.WriteLine(generatedCharacters[menuIndex].DisplayInfo()); // Print the info about the character
                         Console.WriteLine("Your character has now been displayed... rebooting system...");
                         Thread.Sleep(5000); // Wait 5 seconds
                         break;
@@ -72,6 +78,7 @@ namespace LAB7_AI_APP
 
         public static int CheckInput(string input, int choiceIndex) // choiceindex being the amount of objects inside the list/array.
         {
+            input = input?.Trim();
             bool inputValid = int.TryParse(input, out int userChoice); // Menu Index is declared here
             while (!inputValid || userChoice >= choiceIndex || userChoice < 0) // If it's within bounds of the index provided
             {

@@ -15,16 +15,16 @@ namespace LAB7_AI_APP
         public int Health { get; set; }
         public string SpecialAbility { get; set; }
 
-        public void DisplayInfo()
+        public string DisplayInfo()
         {
-            Console.WriteLine($"Name: {Name}\nStrength: {Strength}\nAgility: {Agility}\nHealth: {Health}\nSpecial Ability: {SpecialAbility}");
+            return $"Name: {Name}\nStrength: {Strength}\nAgility: {Agility}\nHealth: {Health}\nSpecial Ability: {SpecialAbility}";
         }
     }
 
     // Redundant to create a CharacterGenerator class this falls within "Character", I did not turn this into a static class because of the use of random
     public class CharacterGenerator
     {
-        private Random random = new Random();
+        private static readonly Random random = new Random();
         private List<string> names = new List<string>
         {
             "Zara", "Thorn", "Luna", "Brax", "Kael", "Nova", "Riven", "Eira", "Drake", "Mira"
